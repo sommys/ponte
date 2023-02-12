@@ -21,12 +21,13 @@
                 uploadMultiple:false,
                 clickable:true,
                 addRemoveLinks:true,
+                maxFilesize:2,
                 url: '/api/file/post',
             });
 
             this.myDropzone.on("success", (file: Dropzone.DropzoneFile, response: Object | string) => {
                 this.$emit("finished", file);
-            })
+            });
         }
 
         public destroyed() {
